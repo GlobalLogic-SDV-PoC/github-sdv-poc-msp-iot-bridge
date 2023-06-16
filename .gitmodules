@@ -1,0 +1,9 @@
+[submodule "dep/internal/ipc"]
+	path = dep/internal/ipc
+	url = codecommit::eu-west-1://raspberry-ipc-library
+[submodule "dep/external/spdlog"]
+	path = dep/external/spdlog
+	url = https://github.com/gabime/spdlog.git
+[submodule "dep/external/gtest"]
+	path = dep/external/gtest
+	url = https://github.com/google/googletest.git
