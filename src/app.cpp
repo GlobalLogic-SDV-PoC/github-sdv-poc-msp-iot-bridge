@@ -101,7 +101,7 @@ void App::onIpcReceive(size_t uuid, const std::shared_ptr<ipc::Packet>& packet, 
     }
     else if (action == "unsubscribe")
     {
-        SPDLOG_ERROR("[iotb] trying to unsubscribe. Unsupported feature. Topic {}, Session UUID", topic, uuid);
+        SPDLOG_ERROR("[iotb] trying to unsubscribe. Unsupported feature. Topic {}, Session UUID = {}", topic, uuid);
         // TODO: no need to unsubscribe for now
     }
 }
