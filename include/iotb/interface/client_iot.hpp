@@ -21,7 +21,7 @@ public:
                                 std::string_view cert_path,
                                 std::string_view key_path,
                                 std::string_view ca_path,
-                                std::string_view clientId_path)
+                                std::string_view client_id_path)
         = 0;
         
     virtual ~IClientIot() = default;
