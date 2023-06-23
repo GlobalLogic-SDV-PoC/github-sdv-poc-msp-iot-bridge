@@ -115,6 +115,7 @@ void App::onIotReceive(std::string_view topic, std::string_view data)
     // TODO: consider creating packet view
     auto packet = std::make_shared<ipc::Packet>();
     packet->header["action"] = "forward";
+    packet->header["topic"] = topic;
     packet->payload = data;
     // find subbed sessions
     for (const auto& sub : m_subscriptions)
