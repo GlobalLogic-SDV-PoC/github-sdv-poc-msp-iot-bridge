@@ -47,12 +47,8 @@ void App::initIpc()
 void App::initIotBridge()
 {
     SPDLOG_DEBUG("[iotb] initializing iot bridge");
-    auto& iot_config = m_config["iot"];
-    m_client_iot->setCredentials(iot_config["endpoint"].get<std::string_view>(),
-                                 iot_config["certificate"].get<std::string_view>(),
-                                 iot_config["private"].get<std::string_view>(),
-                                 iot_config["root"].get<std::string_view>(),
-                                 iot_config["clientId"].get<std::string_view>());
+    const auto& iot_config = m_config["iot"];
+    m_client_iot->setConfig(iot_config);
     m_client_iot->setOnReceivedHandler(ipc::bind_front(&App::onIotReceive, this));
     SPDLOG_DEBUG("[iotb] initializing iot bridge: DONE");
 }
@@ -102,7 +98,8 @@ void App::onIpcReceive(size_t uuid, const std::shared_ptr<ipc::Packet>& packet, 
     else if (action == "unsubscribe")
     {
         SPDLOG_ERROR("[iotb] trying to unsubscribe. Unsupported feature. Topic {}, Session UUID = {}", topic, uuid);
-        // TODO: no need to unsubscribe for now
+        m_client_iot->unsubscribe(topic);
+        // TODO: remove from subscription list
     }
 }
 
