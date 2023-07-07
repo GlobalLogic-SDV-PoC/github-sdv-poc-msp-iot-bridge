@@ -1,8 +1,8 @@
 #pragma once
 
-#include <string_view>
 #include <functional>
 #include <nlohmann/json.hpp>
+#include <string_view>
 
 namespace iotb
 {
@@ -18,9 +18,8 @@ public:
     virtual void unsubscribe(std::string_view topic) = 0;
     virtual void publish(std::string_view topic, std::string_view payload) = 0;
     virtual void setOnReceivedHandler(const on_received_handler& handler) = 0;
-    virtual void setConfig(const nlohmann::json& config)
-        = 0;
-        
+    virtual void setConfig(const nlohmann::json& config) = 0;
+
     virtual ~IClientIot() = default;
 };
 }  // namespace iotb
