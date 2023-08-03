@@ -1,0 +1,2 @@
+/usr/bin/ar qc libiot_bridge_core.a  CMakeFiles/iot_bridge_core.dir/src/app.cpp.o
+/usr/bin/ranlib libiot_bridge_core.a

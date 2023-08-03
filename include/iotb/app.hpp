@@ -25,7 +25,7 @@ public:
 private:
     void onIpcReceive(size_t uuid, const std::shared_ptr<ipc::Packet>& packet, std::weak_ptr<ipc::Server> server);
     void onIotReceive(std::string_view topic, std::string_view data);
-
+private:
     void initIpc();
     void initIotBridge();
 

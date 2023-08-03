@@ -7,3 +7,6 @@
 [submodule "dep/external/gtest"]
 	path = dep/external/gtest
 	url = https://github.com/google/googletest.git
+[submodule "msp-azure-iot-bridge"]
+	path = msp-azure-iot-bridge
+	url = codecommit::eu-west-1://msp-azure-iot-bridge

@@ -1,0 +1,28 @@
+[13:54:17.790] [debug] [iotb] initializing app
+[13:54:17.790] [debug] [iotb] initializing ipc server
+[13:54:17.790] [debug] [iotb] initializing ipc server: DONE
+[13:54:17.790] [debug] [iotb] initializing iot bridge
+[13:54:17.790] [debug] [iotb] initializing iot bridge: DONE
+[13:54:17.790] [debug] [iotb] initializing app: DONE
+[13:54:17.790] [debug] [iotb] starting app
+[13:54:17.790] [debug] [iotb] received message from iot topicName
+[13:54:17.790] [trace] [iotb] iot message topicName {attribute : value}
+[13:54:17.791] [debug] [iotb] forwarding packet
+[13:54:17.791] [debug] [iotb] subscribing to topic /data_collection/send_data/temp
+[13:54:17.791] [error] [iotb] trying to unsubscribe. Unsupported feature. Topic /data_collection/send_data/temp, Session UUID = 1
+[13:54:17.791] [debug] [iotb] stopping app
+[13:54:17.791] [debug] [iotb] stopping app: DONE
+[13:55:21.006] [debug] [iotb] initializing app
+[13:55:21.006] [debug] [iotb] initializing ipc server
+[13:55:21.006] [debug] [iotb] initializing ipc server: DONE
+[13:55:21.006] [debug] [iotb] initializing iot bridge
+[13:55:21.006] [debug] [iotb] initializing iot bridge: DONE
+[13:55:21.006] [debug] [iotb] initializing app: DONE
+[13:55:21.006] [debug] [iotb] starting app
+[13:55:21.006] [debug] [iotb] received message from iot topicName
+[13:55:21.006] [trace] [iotb] iot message topicName {attribute : value}
+[13:55:21.006] [debug] [iotb] forwarding packet
+[13:55:21.006] [debug] [iotb] subscribing to topic /data_collection/send_data/temp
+[13:55:21.007] [error] [iotb] trying to unsubscribe. Unsupported feature. Topic /data_collection/send_data/temp, Session UUID = 1
+[13:55:21.007] [debug] [iotb] stopping app
+[13:55:21.007] [debug] [iotb] stopping app: DONE

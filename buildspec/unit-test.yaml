@@ -1,6 +1,36 @@
 version: 0.2
 
 phases:
+  install:
+    runtime-versions:
+      python: 3.9
+    commands:
+      - pip install git-remote-codecommit gcovr
+      - yum install -y -q
+          cmake3
+          gcc
+          ninja-build
+  pre_build:
+    commands:
+      - git config --global --add protocol.codecommit.allow always
+      - git submodule update --init --recursive
   build:
     commands:
-      - python -c 'print("This is a unit test stage")'
+      - echo "Running unit tests and generate reports..."
+      # Prepare the CMake build folder
+      - cd msp-iot-bridge && mkdir build && cd build
+      # Build and Run Test Executables
+      - cmake3 -G Ninja -DCMAKE_BUILD_TYPE=Debug -DTESTING_ENABLES=True ..
+      - cmake3 --build . --parallel `nproc` --target msp_iot_bridge_core_coverage
+reports:
+  gtest_reports:
+    files:
+      - msp-iot-bridge/build/msp-iot-bridge-coverage.xml
+    discard-paths: yes
+    file-format: COBERTURAXML
+artifacts:
+  files:
+    - '**/*'
+  exclude-paths:
+    - ./msp-iot-bridge/build
+  name: unit_test_out

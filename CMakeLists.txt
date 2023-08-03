@@ -26,16 +26,17 @@ set(IOT_BRIDGE_LOG_LEVEL
     "TRACE"
     CACHE STRING "Specify spdlog SPDLOG_ACTIVE_LEVEL ${LOG_LEVELS}")
 
-if(IOT_BRIDGE_ENABLE_TESTING)
-    if(IOT_BRIDGE_ENABLE_CODE_COVERAGE)
+#if(IOT_BRIDGE_ENABLE_TESTING)
+#    if(IOT_BRIDGE_ENABLE_CODE_COVERAGE)
         include(CodeCoverage)
         append_coverage_compiler_flags()
-    endif()
+        add_subdirectory(test/unit)
+#    endif()
 
-    if(NOT IOT_BRIDGE_EXTERNAL_GTEST)
+#    if(NOT IOT_BRIDGE_EXTERNAL_GTEST)
         add_subdirectory(dep/external/gtest)
-    endif()
-endif()
+#    endif()
+#endif()
 
 if(NOT IOT_BRIDGE_EXTERNAL_SPDLOG)
     add_subdirectory(dep/external/spdlog)
@@ -63,6 +64,6 @@ message("Setting LOG_LEVEL to ${IOT_BRIDGE_LOG_LEVEL}")
 target_compile_definitions(${PROJECT_NAME}
     PRIVATE SPDLOG_ACTIVE_LEVEL=${LOG_LEVEL_INDEX})
 
-if(IOT_BRIDGE_ENABLE_TESTING)
-    add_subdirectory(test)
-endif()
+#if(IOT_BRIDGE_ENABLE_TESTING)
+   add_subdirectory(test)
+#endif()

@@ -1,0 +1,11 @@
+/home/maksym/repos2/msp-iot-bridge/CMakeFiles/rebuild_cache.dir
+/home/maksym/repos2/msp-iot-bridge/CMakeFiles/edit_cache.dir
+/home/maksym/repos2/msp-iot-bridge/CMakeFiles/iot_bridge_core.dir
+/home/maksym/repos2/msp-iot-bridge/dep/external/spdlog/CMakeFiles/edit_cache.dir
+/home/maksym/repos2/msp-iot-bridge/dep/external/spdlog/CMakeFiles/rebuild_cache.dir
+/home/maksym/repos2/msp-iot-bridge/dep/external/spdlog/CMakeFiles/spdlog.dir
+/home/maksym/repos2/msp-iot-bridge/dep/internal/ipc/CMakeFiles/rebuild_cache.dir
+/home/maksym/repos2/msp-iot-bridge/dep/internal/ipc/CMakeFiles/edit_cache.dir
+/home/maksym/repos2/msp-iot-bridge/dep/internal/ipc/CMakeFiles/ipc.dir
+/home/maksym/repos2/msp-iot-bridge/dep/internal/ipc/dep/external/json/CMakeFiles/edit_cache.dir
+/home/maksym/repos2/msp-iot-bridge/dep/internal/ipc/dep/external/json/CMakeFiles/rebuild_cache.dir
