@@ -12,6 +12,7 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
+find_package(ipc REQUIRED)
 
 add_library(${PROJECT_NAME} src/app.cpp)
 target_include_directories(
@@ -19,7 +20,7 @@ target_include_directories(
     PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
            $<INSTALL_INTERFACE:include>)
 
-ament_target_dependencies(${PROJECT_NAME} rclcpp std_msgs)
+ament_target_dependencies(${PROJECT_NAME} rclcpp std_msgs ipc)
 
 install(
     TARGETS ${PROJECT_NAME}
@@ -30,6 +31,6 @@ install(
 install(DIRECTORY include/ DESTINATION include/)
 
 ament_export_targets(${PROJECT_NAME}_export HAS_LIBRARY_TARGET)
-ament_export_dependencies(rclcpp std_msgs)
+ament_export_dependencies(rclcpp std_msgs ipc)
 
 ament_package()

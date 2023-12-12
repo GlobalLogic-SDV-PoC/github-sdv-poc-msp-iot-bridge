@@ -1,0 +1,3 @@
+[submodule "github-sdv-poc-msp-ipc"]
+	path = github-sdv-poc-msp-ipc
+	url = git@github.com:GlobalLogic-SDV-PoC/github-sdv-poc-msp-ipc.git
