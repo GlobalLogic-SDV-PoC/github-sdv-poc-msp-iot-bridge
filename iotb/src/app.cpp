@@ -40,7 +40,10 @@ void App::on_iot_received(std::string topic, std::string payload)
     for (const auto& sub : it->second)
     {
         auto message = std_msgs::msg::String();
-        message.data = std::move(payload);
+        nlohmann::json msg;
+        msg["topic"] = std::move(topic);
+        msg["payload"] = std::move(payload);
+        message.data = msg.dump();
         sub.second->publish(std::move(message));
         RCLCPP_INFO(m_ctx->node->get_logger(), "Forwarding from %s to %s", topic.data(), message.data.data());
     }
