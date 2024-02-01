@@ -25,7 +25,7 @@ App::App(const std::shared_ptr<IClientIot>& iot_client)
 void App::start()
 {
     m_iot_client->connect(m_ctx, m_config["iot"], std::bind(&App::on_iot_received, this, _1, _2));
-    m_ipc_client->start(m_ctx->node,m_config["ipc"], std::bind(&App::on_ipc_received, this, _1, _2));
+    m_ipc_client->start(m_ctx->node, m_config["ipc"], std::bind(&App::on_ipc_received, this, _1, _2));
     rclcpp::spin(m_ctx->node);
 }
 
