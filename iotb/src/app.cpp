@@ -25,7 +25,7 @@ App::App(const std::shared_ptr<IClientIot>& iot_client)
 void App::start()
 {
     m_iot_client->connect(m_ctx, m_config["iot"], std::bind(&App::on_iot_received, this, _1, _2));
-    m_ipc_client->start(m_config["ipc"], std::bind(&App::on_ipc_received, this, _1, _2));
+    m_ipc_client->start(m_ctx->node,m_config["ipc"], std::bind(&App::on_ipc_received, this, _1, _2));
     rclcpp::spin(m_ctx->node);
 }
 
@@ -136,7 +136,7 @@ void App::init()
 {
     m_ctx = std::make_shared<Context>();
     m_ctx->node = std::make_shared<rclcpp::Node>("iot");
-    m_ipc_client = std::make_shared<ipc::Server>("iot_server");
+    m_ipc_client = std::make_shared<ipc::Server>();
 
     m_ctx->node->declare_parameter("config_path", "");
 }
